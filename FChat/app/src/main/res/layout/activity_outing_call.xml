@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.dinhtai.fchat.data.local.User" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_meeting_invitation"
+        tools:context=".ui.call.ActivityOutingCall">
+
+        <ImageView
+            android:id="@+id/imageMeetingType"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_50"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorTextIcons" />
+
+        <TextView
+            android:id="@+id/textSendingInvitation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/sending_meeting_invitation"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintTop_toBottomOf="@+id/imageMeetingType" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                image="@{user.avatar}"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48" />
+
+            <TextView
+                android:id="@+id/textUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{user.fullname}"
+                android:textColor="@color/colorTextIcons"
+                android:textSize="@dimen/sp_18" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageStopInvitation"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:background="@drawable/background_reject_invitation"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/dp_8"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/colorTextIcons" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

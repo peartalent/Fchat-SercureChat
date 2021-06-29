@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="notification"
+            type="com.dinhtai.fchat.data.local.notification.Notification"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            image="@{notification.user.avatar}"
+            android:layout_marginEnd="24dp" />
+
+        <TextView
+            android:id="@+id/textMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imageLogo"
+            android:text="@{@string/notification_call(notification.user.fullname)}"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textMessage"
+            android:layout_toEndOf="@+id/imageLogo">
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cerulean"
+                android:textColor="@color/white"
+                android:text="@string/notification_action_call" />
+
+            <Button
+                android:id="@+id/btnDenied"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notification_action_cancel"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="group"
+            type="com.dinhtai.fchat.data.local.Group" />
+    </data>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_20"
+        android:stretchColumns="1">
+
+        <TableRow android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/layoutAvatar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    image_group="@{group.avatar}"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    app:civ_border_color="@color/cerulean"
+                    app:civ_border_width="@dimen/dp_2"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    avatar="@{group}"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@drawable/bg_group_boder"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_20"
+                android:text="Tên group: "
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editNameGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:backgroundTint="@color/cerulean"
+                android:hint="@{group.name}"
+                android:textSize="@dimen/sp_20" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/textAccept"
+                style="@style/Equalize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cerulean"
+                android:text="@string/lable_accept"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/textCancel"
+                style="@style/Equalize"
+                android:layout_width="@dimen/dp_75"
+                android:layout_height="wrap_content"
+                android:background="@color/cerulean"
+                android:text="@string/notification_action_cancel"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </TableLayout>
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="friend"
+            type="com.dinhtai.fchat.data.local.User" />
+    </data>
+
+    <RelativeLayout
+        android:padding="@dimen/dp_2"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageAvatar"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            image="@{friend.avatar}"
+            app:civ_border_width="@dimen/dp_1"
+            app:civ_border_color="@color/silver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageAvatar"
+            android:layout_alignBottom="@+id/imageAvatar"
+            status="@{friend.status.toString()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageAvatar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/dp_55"
+            android:text="@{friend.fullname}"
+            android:gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:layout_below="@+id/imageAvatar" />
+    </RelativeLayout>
+</layout>

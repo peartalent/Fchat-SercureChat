@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentMessage">
+
+    <fragment
+        android:id="@+id/fragmentMessage"
+        android:name="com.dinhtai.fchat.ui.home.MessageFragment"
+        android:label="MessageFragment"
+        tools:layout="@layout/fragment_message">
+        <action
+            android:id="@+id/action_navigationMessage_to_friendFragment"
+            app:destination="@id/friendFragment" />
+        <action
+            android:id="@+id/action_navigationMessage_to_groupFragment"
+            app:destination="@id/groupFragment" />
+        <action
+            android:id="@+id/action_fragmentMessage_to_chatActivity"
+            app:destination="@id/chatActivity" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/friendFragment"
+        android:name="com.dinhtai.fchat.ui.friend.FriendFragment"
+        android:label="FriendFragment">
+        <action
+            android:id="@+id/action_friendFragment_to_chatActivity"
+            app:destination="@id/chatActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupFragment"
+        android:name="com.dinhtai.fchat.ui.group.GroupFragment"
+        android:label="GroupFragment">
+        <action
+            android:id="@+id/action_groupFragment_to_chatActivity"
+            app:destination="@id/chatActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.dinhtai.fchat.ui.profile.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_friendFragment"
+            app:destination="@id/friendFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_fragmentMessage"
+            app:destination="@id/fragmentMessage" />
+        <action
+            android:id="@+id/action_profileFragment_to_groupFragment"
+            app:destination="@id/groupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.dinhtai.fchat.ui.setting.SettingFragment"
+        android:label="SettingFragment" />
+    <activity
+        android:id="@+id/chatActivity"
+        android:name="com.dinhtai.fchat.ui.chat.ChatActivity"
+        android:label="ChatActivity">
+
+        <argument
+            android:name="groupId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+        <argument
+            android:name="user"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.dinhtai.fchat.data.local.User" />
+
+    </activity>
+    <fragment
+        android:id="@+id/searchGroupFragment"
+        android:name="com.dinhtai.fchat.ui.search.SearchGroupFragment"
+        android:label="SearchGroupFragment" >
+        <action
+            android:id="@+id/action_searchGroupFragment_to_chatActivity"
+            app:destination="@id/chatActivity" />
+    </fragment>
+</navigation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_30"
+        android:paddingBottom="@dimen/dp_30"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textLoading"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:lines="2"
+            android:text="Đang tìm kiếm xung quanh 10km"
+            android:textColor="@color/cerulean"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/imageLoading"
+            android:layout_width="@dimen/dp_190"
+            android:layout_height="@dimen/dp_30" />
+    </LinearLayout>
+</layout>

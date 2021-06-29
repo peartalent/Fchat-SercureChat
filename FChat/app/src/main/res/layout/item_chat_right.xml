@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="message"
+            type="com.dinhtai.fchat.data.local.Message" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_5">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBegin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dp_65" />
+
+        <LinearLayout
+            android:id="@+id/linearContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/bg_boder15"
+            android:backgroundTint="@color/cerulean"
+            android:gravity="top"
+            android:minWidth="@dimen/dp_15"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTime"
+            app:layout_constraintWidth_max="300dp">
+
+            <TextView
+                android:id="@+id/textContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/bg_boder"
+            android:gravity="top"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTime"
+            app:layout_constraintWidth_max="300dp">
+
+            <TextView
+                android:id="@+id/textDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_5"
+                android:textColor="@color/silver"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearImageRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:gravity="right"
+            android:minWidth="@dimen/dp_15"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTime"
+            app:layout_constraintVertical_bias="1.0">
+
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="2dp">
+
+                <ImageView
+                    android:id="@+id/imageContent"
+                    android:layout_width="@dimen/dp_200"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:visibility="gone"
+            android:background="@drawable/bg_boder15"
+            android:backgroundTint="@color/cerulean"
+            android:gravity="top"
+            android:minWidth="@dimen/dp_15"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_max="@dimen/dp_250">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/exoPlayerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:show_timeout="0"
+                app:hide_on_touch="false"
+                app:shutter_background_color="@color/cerulean"
+                android:background="@android:color/transparent"
+                app:controller_layout_id="@layout/exo_custom_chat_right"
+                tools:ignore="InvalidId" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="10dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

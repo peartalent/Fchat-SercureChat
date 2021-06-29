@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemShowImage"
+        android:title="@string/lable_show_image" />
+    <item
+        android:id="@+id/itemDelete"
+        android:title="@string/title_delete_chat" />
+    <item
+        android:id="@+id/itemCancelFriend"
+        android:title="@string/cancel_friend" />
+</menu>

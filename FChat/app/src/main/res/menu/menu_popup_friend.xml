@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/title_messeger"
+        android:id="@+id/itemChat"/>
+    <item android:id="@+id/itemUnFriend"
+        android:title="@string/un_friend"  />
+</menu>

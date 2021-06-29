@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="group"
+            type="com.dinhtai.fchat.data.local.Group" />
+    </data>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:stretchColumns="1">
+
+        <TableRow>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    image_group="@{group.avatar}"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    app:civ_border_color="@color/cerulean"
+                    app:civ_border_width="@dimen/dp_2" />
+
+                <TextView
+                    avatar="@{group}"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@drawable/bg_group_boder"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_span="2"
+                android:gravity="left"
+                android:text="@string/lable_group_info"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:textSize="@dimen/sp_16"
+                android:text="Tên group"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@{group.name}"
+                android:textSize="@dimen/sp_16"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:textSize="@dimen/sp_16"
+                android:text="Sô lượng thành viên"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textSizeMember"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                textSize="@{group.members}"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:textSize="@dimen/sp_16"
+                android:text="Hoạt động lần cuối"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textDateEnd"
+                dateMessage="@{group.messages}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
+
+        </TableRow>
+
+    </TableLayout>
+</layout>

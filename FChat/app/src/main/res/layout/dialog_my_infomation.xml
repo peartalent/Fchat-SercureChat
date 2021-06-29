@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.dinhtai.fchat.ui.main.ActivityMainViewModel" />
+        <variable
+            name="uriImage"
+            type="android.net.Uri" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_20"
+        tools:context=".InfomationActivity">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayoutHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="@dimen/dp_3"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:liftOnScroll="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/materialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:elevation="1dp">
+
+                <ImageButton
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@null"
+                    android:src="@drawable/ic_cancel"
+                    android:tint="@color/cerulean"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textTitle"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_18"
+                    android:textColor="@color/cerulean"
+                    android:text="@string/title_my_infomation"/>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayoutHome"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageAvatar"
+                image="@{vm.myUser.avatar}"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginLeft="@dimen/dp_25"
+                app:civ_border_color="@color/silver"
+                app:civ_border_width="@dimen/dp_1" />
+
+            <ImageButton
+                android:id="@+id/buttonEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/imageAvatar"
+                android:layout_alignBottom="@+id/imageAvatar"
+                android:background="@null"
+                android:src="@drawable/ic_edit_boder" />
+
+            <RelativeLayout
+                android:id="@+id/linearName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_toEndOf="@+id/imageAvatar">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/textName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:inputType="text"
+                    android:text="@{vm.myUser.fullname}"
+                    android:paddingRight="@dimen/dp_48"
+                    android:textColor="@color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@null"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageReload"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_toLeftOf="@+id/imageDone"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_cancel"
+                    android:tint="@color/gray" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageDone"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_accept" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearName"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="30dp"
+                android:layout_toEndOf="@+id/imageAvatar"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@+id/radio_button_1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="@color/cerulean"
+                        android:text="@string/lable_male"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/radio_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:buttonTint="@color/cerulean"
+                        android:text="@string/lable_female"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragmentMessage"
+        android:icon="@drawable/ic_messager"
+        android:title="@string/title_messeger" />
+    <item
+        android:id="@+id/friendFragment"
+        android:icon="@drawable/ic_phonebook"
+        android:title="@string/title_phonebook" />
+    <item
+        android:id="@+id/groupFragment"
+        android:icon="@drawable/ic_group_bottom"
+        android:iconTint="@color/silver"
+        android:title="@string/title_group" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/title_profile" />
+</menu>

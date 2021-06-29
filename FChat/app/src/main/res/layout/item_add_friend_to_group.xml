@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.dinhtai.fchat.data.local.User" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="@dimen/dp_50"
+        android:background="@color/zxing_transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:background="@color/silver"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                app:civ_border_width="@dimen/dp_1"
+                app:civ_border_color="@color/silver"
+                image="@{user.avatar}"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/black"
+                android:maxWidth="@dimen/dp_50"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:gravity="center"
+                android:text="@{user.fullname}" />
+
+            <ImageButton
+                android:id="@+id/buttonRemove"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:background="@null"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:tint="@color/white"
+                android:src="@drawable/ic_cancel" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

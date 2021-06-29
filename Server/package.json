@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "firebase-admin": "^9.7.0",
+    "ip": "^1.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "mysqljs": "^0.0.2-security",
+    "node-rsa": "^1.1.1",
+    "nodemailer": "^6.5.0",
+    "push-notification-node": "^1.0.7",
+    "socket.io": "^3.1.2",
+    "uuid": "^8.3.2",
+    "websocket": "^1.0.33",
+    "ws": "^7.4.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

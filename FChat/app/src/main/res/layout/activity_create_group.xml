@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="friendVM"
+            type="com.dinhtai.fchat.ui.friend.FriendViewModel" />
+        <variable
+            name="createGroupVM"
+            type="com.dinhtai.fchat.ui.group.create.CreateGroupViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.group.create.CreateGroupActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayoutHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="@dimen/dp_3"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:liftOnScroll="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/materialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:elevation="1dp"
+                app:navigationIconTint="@color/cerulean"
+                app:navigationIcon="@drawable/ic_cancel">
+
+                <EditText
+                    android:id="@+id/editSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/dp_50"
+                    android:layout_toStartOf="@+id/buttonSearch"
+                    android:backgroundTint="@color/cerulean"
+                    android:contentDescription="@null"
+                    android:hint="@string/lable_search"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/textMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/lable_member"
+            android:textColor="@color/cerulean"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayoutHome" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_5"
+            tools:listitem="@layout/item_add_friend_to_group"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/textMember" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFriend"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_15"
+            tools:listitem="@layout/item_friend"
+            data="@{friendVM.friends}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="@dimen/dp_50"
+            app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerMember" />
+
+        <Button
+            android:id="@+id/buttonContinue"
+            style="@style/Equalize"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/bg_button_boder"
+            android:backgroundTint="@color/cerulean"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:text="@string/lable_continue"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/dp_75"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

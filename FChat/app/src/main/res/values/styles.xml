@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MatButton" parent="Theme.MaterialComponents">
+        <item name="colorOnPrimary">@android:color/holo_red_light</item>
+        <item name="colorPrimary">@android:color/holo_orange_dark</item>
+        <item name="colorOnSurface">@android:color/holo_orange_light</item>
+    </style>
+
+    <style name="IIVisuApp.CircleIconButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:padding">2dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconSize">32dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="strokeColor">@color/white</item>
+    </style>
+
+    <style name="IIVisuApp.ShapeAppearanceOverlay.Button.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="Theme.CustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/bg_boder</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.BottomSheetDialog" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowBackground">@drawable/bg_bottom_sheet</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Fchat.BottomSheetDialog" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowBackground">@drawable/bg_bottom_sheet</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+    <!-- Popup Menu -->
+    <style name="Widget.MyApp.PopupMenu" parent="@style/Widget.MaterialComponents.PopupMenu">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.PopupMenu</item>
+        <item name="divider">@dimen/dp_20</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.PopupMenu" parent="">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">32dp</item>
+    </style>
+</resources>

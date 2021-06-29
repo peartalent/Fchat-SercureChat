@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="createGroupVM"
+            type="com.dinhtai.fchat.ui.group.create.CreateGroupViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.group.create.CompleteCreateGroupActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayoutHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="@dimen/dp_3"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:liftOnScroll="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/materialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:elevation="1dp"
+                android:minHeight="0dp"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24">
+
+                <TextView
+                    android:id="@+id/editSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/dp_50"
+                    android:layout_toStartOf="@+id/buttonSearch"
+                    android:text="@string/title_create_group"
+                    android:textColor="@color/cerulean"
+                    android:textSize="@dimen/sp_20"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/zxing_transparent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayoutHome"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            tools:ignore="MissingConstraints">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageUpAvatar"
+                android:layout_width="@dimen/dp_55"
+                android:layout_height="@dimen/dp_55"
+                android:src="@drawable/ic_camera_boder" />
+
+            <EditText
+                android:id="@+id/editNameGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:backgroundTint="@color/cerulean"
+                android:hint="@string/title_group"
+                android:paddingLeft="@dimen/dp_10" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/lable_member"
+            android:textColor="@color/cerulean"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFriend"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/dp_50"
+            data="@{createGroupVM.users}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/buttonConfirm"
+            app:layout_constraintTop_toBottomOf="@+id/textMember"
+            tools:listitem="@layout/item_friend" />
+
+        <Button
+            android:id="@+id/buttonDone"
+            style="@style/Equalize"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginBottom="@dimen/dp_75"
+            android:background="@drawable/bg_button_boder"
+            android:backgroundTint="@color/cerulean"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:text="@string/lable_done"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

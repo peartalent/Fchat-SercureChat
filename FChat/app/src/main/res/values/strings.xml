@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">FChat</string>
+
+    <string name="wellcome">Chào mừng!</string>
+    <string name="please_enter_number_phone">Vui lòng nhập số điện thoại để tiếp tục</string>
+    <string name="number_phone">Số điện thoại</string>
+    <string name="code_vn">+84</string>
+    <string name="login">Đăng nhập</string>
+    <string name="block">Chặn người dùng</string>
+    <string name="cancel_friend">Hủy kết bạn</string>
+    <string name="phone_verification">Xác minh số điện thoại</string>
+    <string name="we_send_to_otp_phone">Chúng tôi gửi mã xác minh đến số của bạn: +84</string>
+    <string name="read_all">Đã đọc toàn bộ</string>
+    <string name="delete_all">Xóa tất cả</string>
+    <string name="delete_member">Xóa thành viên</string>
+    <string name="delete">Thu hồi</string>
+    <string name="title_login_with_number_phone">Đăng nhập với số điện thoại</string>
+    <string name="title_cofirm_login">Nhập mã code</string>
+    <string name="title_notification_code_area">Vui lòng kiểm tra SMS </string>
+
+    <string name="un_friend">Hủy kết bạn</string>
+    <string name="title_messeger">Tin nhắn</string>
+    <string name="title_phonebook">Danh bạ</string>
+    <string name="title_friend">Bạn bè</string>
+    <string name="title_local">Gần đây</string>
+    <string name="title_group">Nhóm</string>
+    <string name="title_profile">Cá nhân</string>
+    <string name="title_my_infomation">Thông tin cá nhân</string>
+    <string name="title_edit_infomation">Chỉnh sửa thông tin cá nhân</string>
+    <string name="title_notice">Thông báo</string>
+    <string name="title_setting">Cài đặt </string>
+    <string name="title_logout">Đăng xuất</string>
+    <string name="title_online">Bạn bè đang online </string>
+    <string name="title_create_group">Tạo nhóm </string>
+    <string name="title_number_of_friend_invitations">Lời mời kết bạn</string>
+    <string name="title_library">Bộ sưu tập</string>
+    <string name="title_sent_key">Gửi key</string>
+    <string name="title_camera">Máy ảnh</string>
+
+
+    <string name="lable_continue">Tiếp tục</string>
+    <string name="lable_did_not_receive_otp">Bạn chưa nhận được? </string>
+    <string name="lable_resent">Gửi lại</string>
+    <string name="lable_search">Tìm kiếm</string>
+    <string name="lable_get_otp">Lấy mã OTP</string>
+    <string name="lable_male">Nam</string>
+    <string name="lable_female">Nữ</string>
+    <string name="lable_get_qrcode">qr của tôi</string>
+    <string name="lable_set_qrcode">quét qr</string>
+    <string name="lable_sent">Gửi</string>
+    <string name="lable_sent_otp">Gửi OTP</string>
+    <string name="lable_member">Thành viên</string>
+    <string name="lable_member_select">Đã chọn</string>
+    <string name="lable_done">Hoàn tất</string>
+    <string name="lable_enter_numberphone">Vui lòng nhập số điện thoại</string>
+    <string name="lable_check_numberphone">Vui lòng kiểm tra lại số điện thoại</string>
+    <string name="lable_enter_otp">Vui lòng nhập mã OTP</string>
+    <string name="lable_failed_otp">Vui lòng kiểm tra lại mã OTP</string>
+    <string name="lable_enter_all">Vui lòng nhập đầy đủ thông tin</string>
+    <string name="lable_accept">Đồng ý</string>
+    <string name="lable_select_all">Chọn tất cả</string>
+    <string name="lable_follow">Kết bạn</string>
+    <string name="lable_refuse">Từ chối</string>
+    <string name="lable_error">Đã có lỗi xảy ra</string>
+    <string name="lable_accept_follow">Bạn đã đồng ý kết bạn với</string>
+    <string name="lable_refuse_follow">Bạn đã từ chối kết bạn với</string>
+    <string name="lable_group_joined">Nhóm đã tham gia</string>
+    <string name="lable_create_group">đã tạo nhóm</string>
+    <string name="lable_add_member_group">đã thêm </string>
+    <string name="lable_show_image">Xem ảnh</string>
+    <string name="lable_add">Thêm</string>
+
+    <string name="lable_group_delete">Xóa nhóm</string>
+    <string name="lable_group_leave">Rời nhóm</string>
+    <string name="lable_group_info_hint">Thông tin</string>
+    <string name="lable_group_info">Thông tin nhóm</string>
+    <string name="lable_group_edit_info">Chỉnh sửa thông tin nhóm</string>
+    <string name="lable_action_hint">Hành động khác</string>
+    <string name="lable_add_member">Thêm thành viên</string>
+    <string name="lable_privacy_hint">Quyền riêng tư</string>
+    <string name="lable_block_member">Chặn thành viên</string>
+    <string name="lable_list_block">Danh sách chặn vào nhóm</string>
+    <string name="lable_my_address">Địa chỉ: <font fgcolor="#E3665D">%1$s</font></string>
+    <string name="notification_follow">Bạn nhận được lời kết bạn từ <font fgcolor="#0DB5EA">%1$s</font></string>
+    <string name="notification_call"><font fgcolor="#0DB5EA">%1$s</font> đang gọi bạn</string>
+    <string name="title_delete_chat">Xóa lịch sử</string>
+    <string name="title_delete">Xóa</string>
+    <string name="lable_message_delete">Tin nhắn đã được thu hồi</string>
+
+    <string name="token">token</string>
+    <string name="user_id">userId</string>
+    <string name="user_fullname">fullname</string>
+    <string name="user_avatar">avatar</string>
+    <string name="user_public_key">public_key</string>
+    <string name="tadao_id">6efd690020264448bcc8978317daa0a1</string>
+    <string name="tadao_token">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmVmZDY5MDAyMDI2NDQ0OGJjYzg5NzgzMTdkYWEwYTEiLCJwaG9uZSI6IjAxMjM0NTY3ODkiLCJwdWJsaWNfa2V5IjoieHh4eHgiLCJpYXQiOjE2MTkw
+NzM4Njl9.7FCgddu6z5iqbGBD0u-knUMOYKIm5T41mbHs54JSOkA</string>
+
+    <string name="call_video_notification_channel_id" translatable="false">call_video_channel</string>
+    <string name="call_video_notification_title">Có cuộc gọi</string>
+    <string name="notification_action_call">Nghe</string>
+    <string name="lable_call">Bắt đầu cuộc gọi</string>
+    <string name="notification_action_cancel">Hủy</string>
+
+    <string name="we_need_a_few_details_to_get_your_account_ready">We need a few details to get your account ready</string>
+    <string name="first_name">First Name</string>
+    <string name="first_name_hint">Jhon</string>
+    <string name="last_name">Last Name</string>
+    <string name="last_name_hint">Suradep</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="incoming_meeting_invitation">Cuộc gọi đến</string>
+    <string name="sending_meeting_invitation">Đang gọi</string>
+    <string name="sending_follow">Gửi lời mời kết bạn</string>
+    <string name="refush_follow">Hủy lời mời kết bạn</string>
+</resources>

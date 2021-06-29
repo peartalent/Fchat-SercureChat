@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dinhtai.fchat">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/begin"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/begin"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".ui.search.usernear.UserNearActivity" />
+        <activity android:name=".ui.search.SearchActivity" />
+        <activity android:name=".ui.chat.setting.group.ChatGroupSettingActivity" />
+        <activity android:name=".ui.group.create.CompleteCreateGroupActivity" />
+        <activity android:name=".ui.group.create.CreateGroupActivity" />
+        <activity android:name=".InfomationActivity" />
+        <service android:name=".service.RingService"  />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".ui.profile.qrcode.QrCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.notification.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.call.ActivityIncomingInvitation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.call.ActivityOutingCall"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.image.ImageActivity" />
+        <activity
+            android:name=".ui.chat.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SentOTP"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GetOTP"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Begin"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".service.FirebaseMessageService"
+            android:directBootAware="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
